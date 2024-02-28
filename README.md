@@ -8,7 +8,7 @@ Para isso, foram usadas duas entidades principais:
 - Usuário (User);
 - Foto de perfil (ProfilePicture).
 
-## Formato de um arquivo na classe [MultipartFile](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/multipart/MultipartFile.html)
+## Formato de um arquivo [MultipartFile](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/multipart/MultipartFile.html)
 
 Contém:
 
@@ -21,18 +21,18 @@ Por questões de segurança, não foi salvo o nome original do arquivo no banco 
 
 ## Entidades
 
-- Usar @Lob e byte[] para o base64;
+- Usar @Lob e byte[] para o base64 (conteúdo do arquivo - _bytes_);
 
 ## Services
 
-- Devem receber um arquivo do tipo MultipartFile
+- Devem receber um arquivo do tipo MultipartFile.
 
 ## Controllers
 
-- Devem receber @RequestPart MultipartFile no método que declara a requisição;
+- Devem receber `@RequestPart MultipartFile` como parâmetro no método que declara a requisição;
 - Usar `@PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})` na declaração do verbo da requisição;
 
-## Project structure
+## Estrutura do projeto
 
 ```
 
